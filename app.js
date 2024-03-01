@@ -1,11 +1,10 @@
-"use strict";
 // list storage and display task list
-let tasks = [];
-let taskList = document.getElementById('taskList');
+var tasks = [];
+var taskList = document.getElementById('taskList');
+var taskInput = document.getElementById('taskInput');
 // Function to add task
 function addTask() {
-    const taskInput = document.getElementById('taskInput');
-    const task = taskInput.value.trim(); //trim removes white spaces
+    var task = taskInput.value.trim(); //trim removes white spaces
     if (task !== "") {
         tasks.push(task);
         // displayTasks();
@@ -17,7 +16,7 @@ function addTask() {
 }
 // // Function to modify
 function modifyTask(num) {
-    const newTask = prompt('Enter the new task', tasks[num]);
+    var newTask = prompt('Enter the new task', tasks[num]);
     if (newTask !== null) {
         tasks[num] = newTask.trim();
         // displayTasks();
@@ -33,5 +32,8 @@ function deleteTask(num) {
 // // Function to display Tasks
 function displayTasks() {
     taskList.innerHTML = "";
+    tasks.forEach(function (task, num) {
+        var li = document.createElement('li');
+    });
 }
 // displayTasks()
